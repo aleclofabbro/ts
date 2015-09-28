@@ -1,0 +1,30 @@
+{
+  "name": "spa-env",
+  "description": "Env for Web SPA",
+  "dependencies": {
+    "requirejs": "",
+    "ramda": "",
+    "bacon": "",
+    "bacon.model": "",
+    "bacon.matchers": "",
+    "bacon.jquery": "",
+    "jquery": "",
+    "bootstrap": "",
+    "components-font-awesome": ""
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "authors": [
+    "alec <alecc@example.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
