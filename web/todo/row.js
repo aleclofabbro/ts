@@ -33,7 +33,7 @@ define([
             _unsub();
           }
         });
-      }, 1000);
+      }, 100);
 
       return def.promise();
     };

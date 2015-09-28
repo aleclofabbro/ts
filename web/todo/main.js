@@ -4,9 +4,10 @@ define([
     'bacon.model',
     './row',
     './res/todos',
-    'tpl!./main.html'
+    'tpl!./main.html',
+    'common/dom-model'
   ],
-  function($, R, Bacon, row_ctl, todos, main_templ) {
+  function($, R, Bacon, row_ctl, todos, main_templ, dom_model) {
     return function() {
       var elem = main_templ.clone();
 
@@ -17,7 +18,8 @@ define([
       var delTodo = R.composeP(refreshList, todos.del);
 
       elem.on('del-todo', function(ev, todo) {
-        delTodo(todo._id);
+        delTodo(todo._id)
+          .fail(alert.bind(window, 'AH!!' + txt));
       });
 
       var promptAdd = function() {
@@ -25,8 +27,9 @@ define([
         if (!txt)
           return;
         insertTodo({
-          text: txt
-        });
+            text: txt
+          })
+          .fail(alert.bind(window, 'AH!!' + txt));
       };
 
       elem
@@ -35,30 +38,7 @@ define([
 
       var row_cont = elem.find('.todo-list').first();
 
-      var row_ctls = [];
-      list.onValue(function(rows) {
-        row_ctls
-          .splice(rows.length)
-          .forEach(function(_ctrl) {
-            _ctrl.then(function(ctl) {
-              ctl.release();
-              ctl.elem.remove();
-            });
-          });
-
-        row_ctls = rows
-          .map(function(e, i) {
-            var _ctrl = row_ctls[i];
-            if (!_ctrl) {
-              _ctrl = row_ctl(list.lens('' + i));
-              _ctrl.then(function(ctl) {
-                row_cont.append(ctl.elem);
-              });
-            }
-            return _ctrl;
-          });
-
-      });
+      var ctrls = dom_model.dom_array(list, row_cont, row_ctl);
 
       refreshList();
 

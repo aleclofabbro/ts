@@ -1,5 +1,6 @@
 define([
     'bacon.model',
+    'jquery',
     'bacon.jquery'
   ],
   function(Bacon) {
@@ -23,7 +24,7 @@ define([
         var ctls = rows
           .map(function(e, i) {
             var _ctrl = _ctrls[i];
-            if (_ctrls.length < i) {
+            if (_ctrls.length <= i) {
               var _new_ctrl = row_constr(model.lens('' + i), i);
               return $.when(_new_ctrl)
                 .then(function(ctl) {
@@ -36,6 +37,9 @@ define([
 
         dom_rows.set(ctls);
       });
+      return dom_rows;
     }
-    return dom_rows;
+    return {
+      dom_array: dom_array
+    };
   });
