@@ -10,7 +10,8 @@
     "bacon.jquery": "",
     "jquery": "",
     "bootstrap": "",
-    "components-font-awesome": ""
+    "components-font-awesome": "",
+    "select2": "https://github.com/select2/select2.git"
   },
   "moduleType": [
     "amd",

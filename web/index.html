@@ -5,18 +5,33 @@
   <title>TS</title>
   <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/select2/select2.css">
+  <link rel="stylesheet" href="/lib/select2/select2-bootstrap.css">
   <script type="text/javascript" src="/rqinit.js"></script>
   <script type="text/javascript" src="/lib/requirejs/require.js"></script>
   <script type="text/javascript">
-  require(['jquery', 'ts/main'],
-    function($, mainctl) {
-      main = mainctl();
-      $(document.body).append(main.elem);
+  require(['jquery', 'json!/config/TSConfig', 'TS/ui/login/panel'],
+    function($, conf, login) {
+      login_conf = [{
+        name: "svrtoc",
+        description: "5T - Supervisore regionale Piemonte",
+        icon: ""
+      }, {
+        name: "svrtpp",
+        description: "HH - Pippo Piemonte",
+        icon: ""
+      }];
+      var login = login(login_conf);
+      $('.cont').append(login.elem);
     });
   </script>
 </head>
 
 <body>
+  <div class="container-fluid">
+    <div class="cont col-md-6 col-md-offset-3">
+    </div>
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,22 @@
+{
+  "WGLExtension": "Optima",
+  "projectName": "TrafficSupervisor",
+  "applicationSettingsConfig": {
+    "readUrl": "optima-wsi/settings/web/"
+  },
+  "GUIFramework": "ExtJS",
+  "ExtJSPaths": {
+    "Ext.ux": "lib/ExtJS4/examples/ux",
+    "GeoExt": "lib/GeoExt",
+    "TS": "js/TS",
+    "WGL": "lib/WebGisLibrary"
+  },
+  "urls": {
+    "configurations": "optima-wsi/settings/configurations",
+    "login": "optima-wsi/auth/login/",
+    "logout": "optima-wsi/auth/logout/",
+    "validateSession": "optima-wsi/auth/validate/",
+    "saveUrl": "optima-wsi/HttpStateProvider/set",
+    "readUrl": "optima-wsi/HttpStateProvider/get"
+  }
+}

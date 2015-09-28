@@ -2,10 +2,15 @@ var require = {
   shim: {
     "bootstrap": {
       "deps": ['jquery']
+    },
+    "select2": {
+      "deps": ['jquery']
     }
   },
   paths: {
+    "json": "/require-json",
     "tpl": "/require-tpl",
+    "select2": "/lib/select2/select2", //.min",
     "bootstrap": "/lib/bootstrap/dist/js/bootstrap", //.min",
     "bacon": "/lib/bacon/dist/Bacon", //.min",
     "bacon.model": "/lib/bacon.model/dist/bacon.model", //.min",
