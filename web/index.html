@@ -2,40 +2,17 @@
 <html>
 
 <head>
-  <title>Todo app</title>
+  <title>TS</title>
   <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css">
   <script type="text/javascript" src="/rqinit.js"></script>
   <script type="text/javascript" src="/lib/requirejs/require.js"></script>
   <script type="text/javascript">
-  dbg = function(x) {
-    debugger;
-    return x;
-  }
-  require(['jquery', 'todo/main'],
+  require(['jquery', 'ts/main'],
     function($, mainctl) {
       main = mainctl();
       $(document.body).append(main.elem);
-      // ins(100) // .then(del.bind(null, 100)) // .then(ins.bind(null, 100)) // .then(del.bind(null, 100))
-      // .then(ins.bind(null, 100))
-      // .then(del.bind(null, 100))
     });
-
-  function ins(n) {
-    if (n === 0)
-      return;
-    return main.insertTodo({
-        text: '*' + n
-      })
-      .then(ins.bind(null, --n));
-  };
-
-  function del(n) {
-    if (n === 0)
-      return;
-    return main.delTodo(main.list.get()[0]._id)
-      .then(del.bind(null, --n));
-  };
   </script>
 </head>
 
