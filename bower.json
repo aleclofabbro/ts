@@ -2,6 +2,7 @@
   "name": "spa-env",
   "description": "Env for Web SPA",
   "dependencies": {
+    "qix": "https://github.com/aleclofabbro/Qix.git",
     "requirejs": "",
     "ramda": "",
     "bacon": "",
@@ -11,7 +12,9 @@
     "jquery": "",
     "bootstrap": "",
     "components-font-awesome": "",
-    "select2": "https://github.com/select2/select2.git"
+    "validate": "",
+    "select2": "https://github.com/select2/select2.git",
+    "select2bs": "https://github.com/select2/select2-bootstrap-theme.git"
   },
   "moduleType": [
     "amd",
@@ -19,7 +22,7 @@
     "node"
   ],
   "authors": [
-    "alec <alecc@example.com>"
+    "alec <alec@example.com>"
   ],
   "ignore": [
     "**/.*",

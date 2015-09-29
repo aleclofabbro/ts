@@ -5,31 +5,54 @@
   <title>TS</title>
   <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/lib/select2/select2.css">
-  <link rel="stylesheet" href="/lib/select2/select2-bootstrap.css">
+  <link rel="stylesheet" href="/lib/select2/dist/css/select2.css">
+  <link rel="stylesheet" href="/lib/select2bs/dist/select2-bootstrap.css">
   <script type="text/javascript" src="/rqinit.js"></script>
   <script type="text/javascript" src="/lib/requirejs/require.js"></script>
   <script type="text/javascript">
-  require(['jquery', 'json!/config/TSConfig', 'TS/ui/login/panel'],
-    function($, conf, login) {
-      login_conf = [{
-        name: "svrtoc",
-        description: "5T - Supervisore regionale Piemonte",
-        icon: ""
-      }, {
-        name: "svrtpp",
-        description: "HH - Pippo Piemonte",
-        icon: ""
-      }];
-      var login = login(login_conf);
-      $('.cont').append(login.elem);
+  // require(['jquery', 'json!/config/TSConfig', 'TS/ui/login/panel'],
+  //   function($, conf, login) {
+  //     login_conf = [{
+  //       name: "svrtoc",
+  //       description: "5T - Supervisore regionale Piemonte",
+  //       icon: ""
+  //     }, {
+  //       name: "svrtpp",
+  //       description: "HH - Pippo Piemonte",
+  //       icon: ""
+  //     }];
+  //     var login = login(login_conf);
+  //     $('.cont').append(login.elem);
+  //   });
+  var login_conf = [{
+    name: "svrtoc",
+    description: "5T - Supervisore regionale Piemonte",
+    icon: ""
+  }, {
+    name: "svrtpp",
+    description: "HH - Pippo Piemonte",
+    icon: ""
+  }];
+
+  require(['qix'], function(qix) {
+    ctx = {
+      main: {
+        login_conf: login_conf
+      }
+    };
+
+
+    qix.compile(document.body, ctx, function() {
+      console.log(ctx);
+
     });
+  });
   </script>
 </head>
 
 <body>
   <div class="container-fluid">
-    <div class="cont col-md-6 col-md-offset-3">
+    <div class="cont col-md-6 col-md-offset-3" qix-ts-ui-login:panel="main">
     </div>
   </div>
 </body>

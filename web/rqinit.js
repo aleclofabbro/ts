@@ -7,11 +7,16 @@ var require = {
       "deps": ['jquery']
     }
   },
+  packages: [{
+    name: 'qix',
+    location: '/lib/qix/src',
+    main: 'qix'
+  }],
   paths: {
     "json": "/require-json",
-    "tpl": "/require-tpl",
-    "select2": "/lib/select2/select2", //.min",
+    "select2": "/lib/select2/dist/js/select2", //.min",
     "bootstrap": "/lib/bootstrap/dist/js/bootstrap", //.min",
+    "validate": "/lib/validate/validate", //.min",
     "bacon": "/lib/bacon/dist/Bacon", //.min",
     "bacon.model": "/lib/bacon.model/dist/bacon.model", //.min",
     "bacon.jquery": "/lib/bacon.jquery/dist/bacon.jquery", //.min",
