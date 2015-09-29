@@ -8,7 +8,8 @@ define([
     'select2'
   ],
   function(loginModel, $, R, Bacon, panel_templ, dom_model) {
-    return function(done, par_elem, opts, ctx, def) {
+    return function(resolve, reject, opts, par_elem, all_done, _ctx, _binder_def) {
+      // return function(done, par_elem, opts, ctx, def) {
       var elem = $(panel_templ.clone());
       $(par_elem).append(elem)
       var configs = opts.login_conf;
@@ -59,7 +60,7 @@ define([
       submit.clickE().log('CLICK');
       cant_login.onValue(submit, 'attr', 'disabled');
 
-      done({
+      resolve({
         fn: alert.bind(window),
         elem: elem
       });
