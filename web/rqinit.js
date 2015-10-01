@@ -13,7 +13,6 @@ var require = {
     main: 'qix'
   }],
   paths: {
-    "bluebird": "/lib/bluebird/js/browser/bluebird.min",
     "json": "/require-json",
     "select2": "/lib/select2/dist/js/select2", //.min",
     "bootstrap": "/lib/bootstrap/dist/js/bootstrap", //.min",
