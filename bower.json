@@ -2,7 +2,7 @@
   "name": "spa-env",
   "description": "Env for Web SPA",
   "dependencies": {
-    "qix": "https://github.com/aleclofabbro/Qix.git",
+    "qix": "https://github.com/aleclofabbro/Qix.git#subm_my_promise",
     "requirejs": "",
     "ramda": "",
     "bacon": "",

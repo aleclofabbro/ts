@@ -11,7 +11,7 @@ define([
     return function(resolve, reject, opts, par_elem, all_done, _ctx, _binder_def) {
       // return function(done, par_elem, opts, ctx, def) {
       var elem = $(panel_templ.clone());
-      $(par_elem).append(elem)
+      $(par_elem).append(elem);
       var configs = opts.login_conf;
       var submit = elem.find('.submit');
 
@@ -33,7 +33,7 @@ define([
             id: c.name,
             text: c.description
           };
-        })
+        });
         // };
       conf_select.select2({
         allowClear: true,

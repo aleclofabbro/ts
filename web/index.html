@@ -42,10 +42,10 @@
     };
 
 
-    qix.compile(document.body, ctx, function() {
-      console.log(ctx);
-
-    });
+    qix.compile(document.body, ctx)
+      .then(function(res) {
+        console.log(ctx, res);
+      });
   });
   </script>
 </head>
